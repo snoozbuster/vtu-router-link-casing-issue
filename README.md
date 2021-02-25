@@ -1,29 +1,14 @@
 # vtu-next-stub-casing-issue
 
-## Project setup
-```
-npm install
-```
+Repro for issue with vue-router-next and RouterLinkStub
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+To reproduce:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Run
 
-### Run your unit tests
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Expected: test passes
+Actual: test fails

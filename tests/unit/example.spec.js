@@ -1,12 +1,21 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterLinkStub, shallowMount } from "@vue/test-utils";
+import MyLink from "@/components/MyLink.vue";
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
-    })
-    expect(wrapper.text()).toMatch(msg)
-  })
-})
+describe("MyLink.vue", () => {
+  it("should pass", () => {
+    const name = "some-route";
+
+    const wrapper = shallowMount(MyLink, {
+      props: {
+        name,
+      },
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub,
+        },
+      },
+    });
+
+    expect(wrapper.getComponent(".link").props("to")).toEqual({ name });
+  });
+});
